@@ -1,0 +1,20 @@
+﻿  sageUM.cpp
+C:\Users\diluc\source\repos\EVOUtils\EVOUtils\helper.hpp(179,22): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file 'sageUM.cpp')
+  
+C:\Users\diluc\source\repos\EVOUtils\EVOUtils\helper.hpp(264,8): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file 'sageUM.cpp')
+  
+C:\Users\diluc\source\repos\EVOUtils\EVOUtils\helper.hpp(290,4): warning C4477: 'printf' : format string '%lX' requires an argument of type 'unsigned long', but variadic argument 1 has type 'const HMODULE'
+  (compiling source file 'sageUM.cpp')
+  
+C:\Users\diluc\source\repos\EVOUtils\EVOUtils\helper.hpp(290,4): warning C4313: 'printf': '%X' in format string conflicts with argument 1 of type 'const HMODULE'
+  (compiling source file 'sageUM.cpp')
+  
+C:\Users\diluc\source\repos\EVOUtils\EVOUtils\helper.hpp(328,5): warning C4477: 'printf' : format string '%llX' requires an argument of type 'unsigned __int64', but variadic argument 1 has type 'NTSTATUS'
+  (compiling source file 'sageUM.cpp')
+  C:\Users\diluc\source\repos\EVOUtils\EVOUtils\helper.hpp(328,5):
+  consider using '%lX' in the format string
+  
+C:\Users\diluc\source\repos\EVOUtils\EVOUtils\sageUM.cpp(106,2): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+  EVOUtils.vcxproj -> C:\Users\diluc\source\repos\EVOUtils\x64\Debug\EVOUtils.exe
