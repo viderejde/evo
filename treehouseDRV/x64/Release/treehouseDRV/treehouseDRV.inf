@@ -1,0 +1,80 @@
+;
+; treehouseDRV.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System ; TODO: specify appropriate Class
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=treehouseDRV.cat
+DriverVer = 04/04/2024,14.48.40.700
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+treehouseDRV_Device_CoInstaller_CopyFiles = 11
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+treehouseDRV.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%treehouseDRV.DeviceDesc%=treehouseDRV_Device, Root\treehouseDRV ; TODO: edit hw-id
+
+[treehouseDRV_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+treehouseDRV.sys
+
+;-------------- Service installation
+[treehouseDRV_Device.NT.Services]
+AddService = treehouseDRV,%SPSVCINST_ASSOCSERVICE%, treehouseDRV_Service_Inst
+
+; -------------- treehouseDRV driver install sections
+[treehouseDRV_Service_Inst]
+DisplayName    = %treehouseDRV.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\treehouseDRV.sys
+
+;
+;--- treehouseDRV_Device Coinstaller installation ------
+;
+
+[treehouseDRV_Device.NT.CoInstallers]
+AddReg=treehouseDRV_Device_CoInstaller_AddReg
+CopyFiles=treehouseDRV_Device_CoInstaller_CopyFiles
+
+[treehouseDRV_Device_CoInstaller_AddReg]
+;
+
+
+[treehouseDRV_Device_CoInstaller_CopyFiles]
+;
+
+
+[treehouseDRV_Device.NT.Wdf]
+KmdfService =  treehouseDRV, treehouseDRV_wdfsect
+[treehouseDRV_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
+DiskName = "treehouseDRV Installation Disk"
+treehouseDRV.DeviceDesc = "treehouseDRV Device"
+treehouseDRV.SVCDESC = "treehouseDRV Service"

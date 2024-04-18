@@ -1,0 +1,12 @@
+﻿  Building 'treehouseDRV' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
+  Stamping x64\Release\treehouseDRV.inf
+  Stamping [Version] section with DriverVer=04/04/2024,14.48.40.700
+  entry.c
+C:\Users\diluc\source\repos\treehouseDRV\treehouseDRV\entry.c(21,32): warning C4152: nonstandard extension, function/data pointer conversion in expression
+  hook.c
+  Generating Code...
+  treehouseDRV.vcxproj -> C:\Users\diluc\source\repos\treehouseDRV\x64\Release\treehouseDRV.sys
+  Done Adding Additional Store
+  Successfully signed: C:\Users\diluc\source\repos\treehouseDRV\x64\Release\treehouseDRV.sys
+  
+  Driver is 'Universal'.
